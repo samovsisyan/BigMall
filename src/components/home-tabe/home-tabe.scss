@@ -1,0 +1,94 @@
+@import '../../../public/style/base/mixins';
+
+
+
+.tab {
+  @include main-padding;
+  &::after{
+    @include size(456px,603px);
+    content: url(../../../public/images/homePage/Vector.png);
+    position: absolute;
+    left: -100px;
+    bottom: -250px;
+  }
+  &__container {
+    @include border-radius(60px);
+    background: $grayF2;
+    padding: 56px 40px 80px;
+    margin: 45px auto 70px;
+    height: 550px;
+    .nav-tabs {
+      margin-bottom: 56px;
+    }
+  }
+  .nav-tabs .nav-link {
+    @include text-fz($fz-17, $fz-17, $fz-14);
+    @include transition(.3s);
+    @extend %RubikMedium;
+    border: none;
+    line-height: 1;
+    color: $baseColor;
+    padding: 0;
+    &.disabled {
+      width: 82px;
+      @include dots($grayD7);
+      &::before {
+        margin-bottom: 8px;
+      }
+    }
+    &::after {
+      @include border-radius(3px);
+      @include size(100%, 3px);
+      content: '';
+      margin-top: 8px;
+      display: block;
+    }
+    &.active {
+      background-color: transparent;
+      color: $activeGreen;
+      &::after {
+        background-color: $activeGreen;
+      }
+    }
+  }
+  @include media-breakpoint-down(md){
+    &__container{
+      padding: 36px 10px 60px;
+    }
+    .nav-tabs .nav-link {
+      &.disabled{
+        width: 40px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md){
+    &::after{
+      display: none;
+    }
+    &__container{
+      padding: 36px 0 30px;
+      height: 380px;
+    }
+    .nav-tabs .nav-link {
+      &.disabled{
+        width: 40px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs){
+    &__container{
+      padding: 20px 0 15px;
+      height: 550px;
+      .nav-tabs {
+        margin-bottom: 20px;
+        padding:0 15px;
+      }
+    }
+    .nav-tabs .nav-link {
+      margin-top: 5px;
+      &.disabled{
+        width: 20px;
+      }
+    }
+  }
+}

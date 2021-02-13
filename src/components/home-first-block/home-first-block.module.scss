@@ -1,10 +1,10 @@
-@import "../../../public/style/base/mixins";
+@import '../../../public/style/base/mixins';
 
 .firsBlock {
   margin-bottom: 72px;
   > div {
     @include main-padding;
-    top: 0;
+    top: 0
   }
   &__shipping {
     width: 575px;
@@ -56,14 +56,14 @@
       margin: 10px 0 15px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(xs){
     &__title {
       @include font-size($fz-26);
-      br {
-        display: none;
-      }
+      br{
+       display: none;
+     }
     }
-    &__desc {
+    &__desc{
       line-height: 16px;
       margin: 5px 0 10px;
     }
@@ -80,8 +80,8 @@
   @include size(540px, auto);
   max-width: 100%;
   &::before {
-    content: "\e804";
-    font-family: "fontello";
+    content: '\e804';
+    font-family: 'fontello';
     position: absolute;
     color: $red;
     top: 50%;
@@ -119,13 +119,13 @@
     }
     &__input {
       @include size(inherit, 35px);
-      padding: 10px 150px 10px 35px;
+      padding: 10px 150px 10px 35px
     }
     &__btn {
       padding: 0 18px;
     }
   }
-  @include media-breakpoint-down(xs) {
-    width: 100%;
+  @include media-breakpoint-down(xs){
+      width: 100%;
   }
 }

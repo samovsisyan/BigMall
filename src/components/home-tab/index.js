@@ -1,2 +1,2 @@
-import HomeTap from './home-tab'
-export default HomeTap
+import HomeTab from './home-tab'
+export default HomeTab

@@ -1,2 +1,2 @@
-import ConfirmePhoneModal from './confirm-phone-modal'
-export default ConfirmePhoneModal
+import ConfirmPhoneModal from './confirm-phone-modal'
+export default ConfirmPhoneModal

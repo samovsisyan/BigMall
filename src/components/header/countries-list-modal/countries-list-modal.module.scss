@@ -1,4 +1,4 @@
-@import "../../../../public/style/base/mixins";
+@import '../../../../public/style/base/mixins';
 
 .countries {
   &__title {
@@ -20,7 +20,9 @@
       color: $activeGreen;
     }
   }
-  :global(.modal-content) {
+  :global(
+.modal-content
+) {
     @include border-radius($radius20);
     @include modal-arrow;
     border: 0;
@@ -29,10 +31,7 @@
       padding: 20px 15px;
     }
   }
-  :global(.modal-dialog) {
+  :global(.modal-dialog ) {
     max-width: 240px;
-    position: absolute;
-    left: 69%;
-    top: 70px;
   }
 }

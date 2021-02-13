@@ -1,2 +1,2 @@
 import ShopSearchBlock from './shop-search-block'
-export default ShopSearchBlock
+export default  ShopSearchBlock

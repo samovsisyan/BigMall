@@ -1,2 +1,2 @@
-import ShippingAddresModal from './shipping-address-modal'
-export default ShippingAddresModal
+import ShippingAddressModal from './shipping-address-modal'
+export default ShippingAddressModal

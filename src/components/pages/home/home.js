@@ -1,25 +1,21 @@
-import React, {Component} from 'react'
+import React from 'react';
 import {
-  HomeFirstBlock,
-  HomeTab,
-  SaveTime,
-  OurApps,
-  QuestionBlock,
-} from './../../index'
+    HomeFirstBlock,
+    HomeTab,
+    SaveTime,
+    OurApps,
+    QuestionBlock,
+} from './../../index';
 
 
-class Home extends Component {
-  render() {
+export default function Home() {
     return (
-      <div>
+        <>
         <HomeFirstBlock/>
         <HomeTab/>
         <SaveTime/>
         <QuestionBlock/>
         <OurApps/>
-      </div>
+        </>
     )
-  }
 }
-
-export default Home

@@ -1,2 +1,2 @@
-import QuestionItem from './question-item'
-export default QuestionItem
+import QuestionItem from './question-item';
+export default QuestionItem;

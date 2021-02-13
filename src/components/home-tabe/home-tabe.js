@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import {Container, Tabs, Tab} from 'react-bootstrap'
-import  './home-tab.scss'
-import {CarouselContainer,Title} from '../index'
+import React, {useState} from 'react';
+import {Container, Tabs, Tab} from 'react-bootstrap';
+import  './home-tabe.scss'
+import {CarouselContainer,Title} from '../index';
 
-const HomeTab = () => {
+function HomeTabe() {
     const [key, setKey] = useState('all');
     return (
         <Container fluid className="tab position-relative">
@@ -38,5 +38,4 @@ const HomeTab = () => {
         </Container>
     )
 }
-
-export default HomeTab
+export default HomeTabe;

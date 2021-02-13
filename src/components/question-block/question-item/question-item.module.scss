@@ -1,0 +1,44 @@
+@import '../../../../public/style/base/mixins';
+
+.question {
+  width:calc(100% - 15px);
+  :global(.dropdown-toggle){
+    @include text-truncate
+  }
+  :global(.btn-link) {
+    @extend %RubikMedium;
+    color: $baseColor;
+    text-decoration: none;
+    background: $white;
+    padding: 30px 50px;
+    border-radius: 100px;
+    width: 100%;
+    margin-bottom: 30px;
+    &::after {
+      font-family: 'fontello';
+      content: '\e802';
+      border: none;
+      position: absolute;
+      right: 36px;
+    }
+    @include media-breakpoint-down(sm){
+      padding: 20px 50px;
+    }
+  }
+  :global(.dropdown-menu) {
+    @include border-radius(15px);
+    z-index: 300;
+    transform: translate3d(0, 88px, 0) !important;
+    border: none;
+    box-shadow: $box-shadow;
+    @include media-breakpoint-down(sm){
+      transform: translate3d(0, 59px, 0) !important;
+    }
+  }
+  :global(.dropdown-item) {
+    white-space: pre-wrap;
+  }
+  @include media-breakpoint-down(xs){
+    width: 100%;
+  }
+}

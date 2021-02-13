@@ -1,0 +1,3 @@
+export const GET_GEOLOCATION_FETCH = '@@geolocation/GET_GEOLOCATION_FETCH'
+export const GET_GEOLOCATION_SUCCESS = '@@geolocation/GET_GEOLOCATION_SUCCESS'
+export const GET_GEOLOCATION_FAILED = '@@geolocation/GET_GEOLOCATION_FAILED'

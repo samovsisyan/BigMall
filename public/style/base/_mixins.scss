@@ -1,0 +1,144 @@
+@import '~bootstrap/scss/_mixins.scss';
+@import '~bootstrap/scss/_functions';
+@import '~bootstrap/scss/_variables';
+@import './variables';
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin text-fz($xl,$lg:$xl,$sm:$lg) {
+  @include font-size($xl);
+  @include media-breakpoint-down(md) {
+    @include font-size($lg);
+  }
+  @include media-breakpoint-down(sm) {
+    @include font-size($sm);
+  }
+}
+
+@mixin modal-arrow {
+  &::before {
+    @include size(25px);
+    content: '';
+    display: block;
+    background: $white;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: -1;
+    top: -12px
+  }
+}
+
+@mixin dots($bg) {
+  &::before {
+    @include size(6px);
+    @include border-radius(50%);
+    background-color: $bg;
+    content: '';
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    color: $grayB1
+  }
+  &:-moz-placeholder {
+    color: $grayB1
+  }
+  &::-moz-placeholder {
+    color: $grayB1
+  }
+  &:-ms-input-placeholder {
+    color: $grayB1
+  }
+}
+
+@mixin main-padding {
+  padding-left: 150px;
+  padding-right: 150px;
+  @include media-breakpoint-down(lg) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@mixin basicModalProperties {
+  &__title {
+    @extend %RubikBold;
+  }
+  &__success {
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    @include border-radius(70px);
+    @extend %RubikBold;
+    padding: 12px;
+    line-height: 30px;
+    background: $greenGradient;
+    margin-bottom: 21px;
+    &:disabled {
+      opacity: 1;
+      color: $textTransparent
+    }
+    @include hover-focus-active {
+      background: $greenGradient;
+    }
+  }
+  :global(.modal-content) {
+    @include border-radius($radius20);
+    border: 0;
+    padding: 40px 26px;
+    @include media-breakpoint-down(xs) {
+      padding: 20px 15px;
+    }
+  }
+  :global(.modal-dialog ) {
+    max-width: 370px;
+    @include media-breakpoint-down(xs) {
+      width: 300px;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__success {
+      line-height: 15px;
+    }
+  }
+}
+
+@mixin addResetItem($white) {
+  &__minus, &__plus,  &__number {
+    @include size($white);
+  }
+
+  &__plus {
+    background: $greenGradient;
+    margin-left: 10px;
+  }
+  &__minus {
+    border: 2.2px solid $activeGreen;
+    margin-right: 10px;
+    @include hover-focus-active {
+      border-color: $activeGreen !important;
+    }
+  }
+  &__number {
+    @extend %RubikMedium;
+    background: $grayF3;
+    color: $baseColor;
+    @include hover-focus-active {
+      background: $grayF3;
+      color: $baseColor;
+    }
+  }
+}

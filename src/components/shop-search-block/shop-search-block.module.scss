@@ -1,0 +1,115 @@
+@import '../../../public/style/base/mixins';
+//categories
+.categories {
+  @include border-radius($radius20);
+  width: 270px;
+  margin-right: 30px;
+  &__image {
+    padding: 17px 20px 20px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__btn {
+    @include border-bottom-radius($radius20);
+    @include border-top-radius(0);
+    background: $categoryBtn;
+    padding: 19px 26px 23px;
+    &__icon {
+      @include size(34px);
+      background: $opacityFF;
+    }
+  }
+  @include media-breakpoint-down(lg){
+    width: 200px;
+    margin-right: 20px;
+  }
+}
+
+//search
+.search {
+  &__title {
+    @include text-fz($fz-32, $fz-32, $fz-26);
+    margin-bottom: 35px;
+    @extend %RubikBold;
+  }
+  @include size(auto, 70px);
+  @include border-radius(92px);
+  :global(.form-control) {
+    @include placeholder;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 15px 32px;
+    color: $baseColor;
+    height: 100%;
+  }
+  :global(.input-group-append) {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    @include size(70px);
+    padding: 5px;
+  }
+  &__btn {
+    @include size(60px);
+    background: $redSearch;
+    @include hover-focus-active {
+      background: $redSearch;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+  }
+  @include media-breakpoint-down(md) {
+    &__title {
+      margin: 30px 0;
+    }
+  }
+  @include media-breakpoint-down(xs){
+    margin-bottom: 20px;
+  }
+}
+
+//filter button
+.filterBtn {
+  @extend %RubikMedium;
+  @include size(270px, 70px);
+  @include border-radius($radius20);
+  @include text-fz($fz-15, $fz-15, $fz-12);
+  margin-left: 35px;
+  background: $grayED;
+  color: $baseColor;
+  padding: 19px 26px 19px 32px;
+  &__icon {
+    svg {
+      stroke: #222C54
+    }
+  }
+  &__checkbox {
+    top: 0;
+    @include size(inherit);
+    font-size: 200px;
+    z-index: 10;
+    opacity: 0;
+    &:checked {
+      + .filterBtn__icon > svg {
+        stroke: $activeFilter;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg){
+    @include size(200px, 70px);
+    margin-left: 20px;
+  }
+  @include media-breakpoint-down(xs){
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.filtersBlock {
+  margin: 30px 0 0;
+  .resetFilters{
+    @include text-fz($fz-14,$fz-12);
+    color:$redSearch
+  }
+}

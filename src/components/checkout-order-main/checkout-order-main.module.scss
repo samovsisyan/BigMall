@@ -1,0 +1,223 @@
+@import '../../../public/style/base/_mixins';
+
+.checkoutOrder {
+  &__main {
+    @include border-radius($radius20);
+    max-width: calc(100% - 400px);
+    padding: 60px 100px;
+    &__resetTel {
+      @include text-fz($fz-14, $fz-14, $fz-12);
+      color: $baseColor;
+      top: 0;
+      bottom: 0;
+      right: 18px;
+      z-index: 10;
+      @include hover-focus-active{
+        color: $baseColor;
+      }
+    }
+    :global(.react-tel-input) {
+      @include border-radius(12px);
+      background: $grayEA;
+      border: 1px solid $grayE8;
+      margin: 0 0 40px;
+    }
+    :global(.react-tel-input .form-control) {
+      @include size(100%, 54px);
+      margin-bottom: 22px;
+    }
+
+    :global(.react-tel-input .flag-dropdown) {
+      background: transparent !important;
+      border: none;
+    }
+    :global(.form-label) {
+      @include text-fz($base, $fz-14, $fz-12);
+      @extend %RubikMedium;
+      margin-bottom: 14px;
+    }
+    .addres {
+      margin-bottom: 40px;
+      &__item {
+        width: calc(100% / 4 - 16.5px);
+        &:not(:last-of-type) {
+          margin-right: 22px;
+        }
+      }
+    }
+    .cartDate {
+      margin: 20px 0;
+      &__item {
+        width: calc(100% / 3 - 14.6px);
+        &:not(:last-of-type) {
+          margin-right: 21px;
+        }
+      }
+    }
+    :global(.custom-select ) {
+      &__control {
+        @include border-radius(12px);
+        background: $grayEF;
+        height: 54px;
+        border: none;
+        box-shadow: none;
+        margin-bottom: 40px;
+      }
+      &__option {
+        @extend %RubikMedium;
+        @include text-fz($fz-14, $fz-14, $fz-12);
+        padding: 0;
+        margin-top: 14px;
+      }
+      &__menu {
+        margin-top: 20px;
+      }
+    }
+    .desc {
+      margin-bottom: 30px;
+      svg {
+        transform: translateY(4px);
+      }
+      p {
+        @include text-fz($fz-15, $fz-15, $fz-12);
+        margin-left: 10px;
+        line-height: 24px;
+      }
+    }
+    .checkCard {
+      margin: 40px 0 16px;
+      &__item {
+        @include size(calc(100% / 3 - 15px), 60px);
+        &__radio {
+          @include size(300%);
+          z-index: 10;
+          opacity: 0;
+          cursor: pointer;
+          &:checked {
+            ~ .checkCard__item__label {
+              border-color: $activeGreen;
+            }
+          }
+        }
+        &__label {
+          @include text-fz($fz-14, $fz-14, $fz-12);
+          @include border-radius(82px);
+          @extend %RubikMedium;
+          border: 2px solid $grayF5;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &__main {
+      max-width: calc(100% - 320px);
+      padding: 60px 50px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__main {
+      max-width: 100%;
+      padding: 20px 60px;
+      :global(.react-tel-input) {
+        margin: 0 0 20px;
+      }
+      :global(.react-tel-input .form-control) {
+        height: 40px;
+        margin-bottom: 15px;
+      }
+      :global(.form-label) {
+        margin-bottom: 10px;
+      }
+      .addres {
+        margin-bottom: 20px;
+        &__item {
+          width: calc(100% / 4 - 7.5px);
+          &:not(:last-of-type) {
+            margin-right: 10px;
+          }
+        }
+      }
+      .cartDate {
+        margin: 15px 0;
+        &__item {
+          width: calc(100% / 3 - 6.6px);
+          &:not(:last-of-type) {
+            margin-right: 9px;
+          }
+        }
+      }
+      :global(.custom-select ) {
+        &__control {
+          height: 40px;
+          margin-bottom: 20px;
+        }
+        &__dropdown-indicator {
+          padding: 10px 18px 10px 0;
+          height: 100%;
+        }
+        &__placeholder {
+          line-height: 30px;
+        }
+      }
+      .desc {
+        margin-bottom: 10px;
+        p {
+          line-height: 16px;
+        }
+      }
+      .checkCard {
+        margin: 20px 0 10px;
+        &__item {
+          @include size(calc(100% / 3 - 6.6px), 40px);
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__main {
+      padding: 20px 15px;
+      &__resetTel {
+        position: static !important;
+      }
+      .addres {
+        &__item {
+          width: 100%;
+          &:not(:last-of-type) {
+            margin-right: 0;
+          }
+          &:not(:first-of-type) {
+            margin-top: 15px;
+          }
+        }
+      }
+      .cartDate {
+        &__item {
+          width: 100%;
+          &:not(:last-of-type) {
+            margin-right: 0;
+          }
+          &:not(:first-of-type) {
+            margin-top: 15px;
+          }
+        }
+      }
+      .checkCard {
+        &__item {
+          @include size(100%, 40px);
+          &:not(:first-of-type) {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+:global(.custom-select__value-container) {
+  padding: 5px 18px !important;
+}
+
+:global(.custom-select__placeholder) {
+  margin: 0 !important;
+
+}

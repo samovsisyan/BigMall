@@ -1,0 +1,76 @@
+//colors
+$blue: #0FABEE;
+$baseColor: #222C54;
+$baseBg: #F7F7F7;
+$lightGray: #888CA5;
+$grayE8: #E8ECFD;
+$grayA5: #A5A8B9;
+$lighterGray: #A2A5B6;
+$grayEF: #EFEFEF;
+$grayFB: #FBFBFB;
+$grayEA: #EAEAEA;
+$grayED: #EDEDEE;
+$gray9F: #9FA1AE;
+$grayF3: #F3F3F3;
+$grayB1: #B1B4C5;
+$gray96: #696683;
+$grayD7: #D7D7D7;
+$grayF2: #F2F2F2;
+$grayF5: #F5F5F5;
+$purple: #B23FAD;
+$grayF0: #F0F0F0;
+$red: #F52658;
+$redSearch: #F62658;
+$baseGreen: #1EB47E;
+$activeGreen: #12B575;
+$activeFilter:#12B476;
+$rootBg: linear-gradient(180deg, #F1F1F1 0%, #F7F7F7 100%);
+$arrowShadow: rgba(71, 0, 95, 0.03);
+$mainMenuShadow:0 40px 120px rgba(71, 0, 95, 0.14);
+$textTransparent: rgba(255, 255, 255, 0.4);
+$modalBg: rgba(5, 5, 5, 0.15);
+$opacityFF: rgba(255, 255, 255, 0.2);
+//gradients
+$greenGradient: linear-gradient(230.48deg, #13B07F -2%, #13B672 71.71%, #00A06D 107.71%);
+$footerGradient: linear-gradient(3.09deg, #13B07F -27.88%, #13B672 76.75%, #00A06D 127.84%);
+$arrowActive: linear-gradient(90deg, #13B574 0%, #12B07E 100%);
+$categoryBtn:linear-gradient(218.09deg, #13B07F -6.18%, #13B672 72.86%, #00A06D 111.46%);
+$redGradientButton: linear-gradient(73.22deg, #F02354 7.3%, #FC2B5D 92.94%);
+$scrollbar:linear-gradient(180deg, #12B17D 0%, #0BAE70 100%);
+
+//font sizes
+$base: 16px;
+$fz-17: 17px;
+$fz-18: 18px;
+$fz-20: 20px;
+$fz-24: 24px;
+$fz-26: 26px;
+$fz-15: 15px;
+$fz-14: 14px;
+$fz-12: 12px;
+$fz-13: 13px;
+$fz-10: 10px;
+$fz-60: 60px;
+$fz-40: 40px;
+$fz-38: 38px;
+$fz-34: 34px;
+$fz-32: 32px;
+$fz-30: 30px;
+
+%RubikRegular {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+}
+
+%RubikMedium {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+}
+
+%RubikBold {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+}
+
+//border radius
+$radius20: 20px

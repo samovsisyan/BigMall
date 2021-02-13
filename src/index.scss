@@ -1,0 +1,143 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../public/style/base/mixins';
+@import 'styles/fontello';
+
+* {
+  @include text-fz($base, $fz-14, $fz-12);
+  @extend %RubikRegular;
+  color: $baseColor;
+  margin: 0;
+  padding: 0;
+  @include hover-focus-active {
+    outline: none !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @extend %RubikMedium;
+}
+
+#root {
+  max-height: 100vh;
+  background: $rootBg;
+}
+
+.form-control {
+  @include text-fz($fz-15, $fz-15, $fz-12);
+  @include border-radius(12px);
+  @extend %RubikRegular;
+  @include placeholder;
+  padding: 10px 18px;
+  height: 54px;
+  background: $baseBg;
+  border: 1px solid $grayE8;
+  color: $grayA5;
+  margin-bottom: 16px;
+  line-height: 30px;
+  @include hover-focus-active {
+    border-color: $grayE8;
+    background: $baseBg;
+  }
+  &.shipping-address{
+    background: $grayEA;
+  }
+  @include media-breakpoint-down(sm) {
+    line-height: 15px;
+    height: 40px;
+    padding: 10px 15px;
+  }
+}
+
+.modal-header button.close {
+  @include size(40px);
+  @include border-radius(50%);
+  position: absolute;
+  right: -32px;
+  background-color: $white;
+  opacity: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &::before {
+    @include size(14px);
+    content: '';
+    background: url(../public/images/icons/close.png) no-repeat;
+    background-size: 14px auto;
+  }
+  span {
+    display: none;
+  }
+  @include media-breakpoint-down(xs) {
+    right: 16px;
+    top: 14px;
+  }
+}
+
+.modal-backdrop.show {
+  background: $modalBg;
+}
+//phone number select
+.react-tel-input {
+  .form-control {
+    @include placeholder;
+    @extend %RubikRegular;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none;
+    margin: 0;
+    color: $baseColor
+  }
+  .selected-flag {
+    background: transparent !important;
+    .arrow {
+      display: none;
+    }
+  }
+}
+
+
+//select box style
+.custom-select  {
+  &__control {
+    border: none;
+    box-shadow: none;
+  }
+  &__option {
+    @extend %RubikMedium;
+    @include text-fz($fz-14, $fz-14, $fz-12);
+    padding: 0;
+    text-align: center;
+    margin-top: 14px;
+    color: $baseColor;
+    background: $white !important;
+  }
+  &__menu {
+    @include modal-arrow;
+    @include border-radius(10px);
+    margin-top: 20px;
+    padding: 10px 0 21px;
+    background: $white;
+    border: none;
+    box-shadow: 0 20px 100px rgba(71, 0, 95, 0.08) !important;
+  }
+  &__indicator-separator {
+    display: none;
+  }
+  &__value-container {
+    padding: 0 10px 0 18px;
+  }
+  &__dropdown-indicator {
+    padding: 10px 18px 10px 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__placeholder {
+    @extend %RubikRegular;
+    @include text-fz($fz-14, $fz-12, $fz-12);
+    @include text-truncate;
+    line-height: 30px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,96 @@
+@import '../../../public/style/base/mixins';
+
+.saveTime {
+  @include main-padding;
+  &::before {
+    @include size(150px, 655px);
+    content: '';
+    background: url(../../../public/images/homePage/Vector-1.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    bottom: -500px;
+  }
+  @include media-breakpoint-down(md) {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.information {
+  @include border-radius(60px);
+  background: $grayF2;
+  padding: 63px 40px;
+  margin: 45px auto 100px;
+  &__item {
+    @include size(calc(100% / 4 - 84px), auto);
+    &__img {
+      @include size(130px);
+      img {
+        height: 55px;
+      }
+    }
+    &__text {
+      line-height: 24px;
+      color: $gray96;
+      margin-top: 26px;
+    }
+    &__empty {
+      @include size(auto, 130px);
+      @include dots($baseColor);
+      &::before {
+        position: absolute;
+        right: 0;
+        left: 0
+      }
+      &::after {
+        @include border-radius(50%);
+        @include size(36px);
+        background: $grayF0;
+        content: '';
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &__item {
+      width: calc(100% / 4 - 63px);
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin: 20px auto 40px;
+    &__item {
+      @include size(calc(100% / 2 - 30px), auto);
+      margin-top: 15px;
+      &__text {
+        margin-top: 10px;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-child(odd) {
+        margin-right: 20px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__item {
+      @include size(100%, auto);
+      &__img {
+        @include size(80px);
+        img {
+          height: 40px;
+        }
+      }
+      &__text {
+        margin-top: 10px;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../../../public/style/base/_mixins';
+
+.about{
+  @include main-padding
+}
+.aboutSidebar {
+  @include size(270px, auto);
+  margin-top: 46px;
+  margin-right: 30px;
+  @include media-breakpoint-down(xs) {
+    @include size(100%, auto);
+    margin-right: 0;
+    margin-top: 30px;
+  }
+}

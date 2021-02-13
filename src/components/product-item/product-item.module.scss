@@ -1,0 +1,83 @@
+@import '../../../public/style/base/mixins';
+
+.product {
+  margin-bottom: 30px;
+  &__item {
+    @include border-radius($radius20);
+    cursor: pointer;
+    &__top {
+      @include size(100%, 152px);
+      border-bottom: 1px solid $grayED;
+      &__img {
+        max-height: 152px;
+        max-width: 100%;
+        object-fit: contain;
+      }
+      &__countContainer {
+        display: none;
+        background: linear-gradient(180deg, transparent 0%, $white 66.23%);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-bottom: 13px;
+      }
+      @include addResetItem(38px);
+      &__number {
+        @include border-radius(40px);
+        width: 90px;
+      }
+    }
+    &__info {
+      @include text-fz($fz-14, $fz-12);
+      color: $gray96;
+      padding: 14px 26px;
+      &__weight {
+        margin: 5px 0 0;
+        color: $gray9F
+      }
+      &__price {
+        @extend %RubikMedium;
+        @include text-fz($fz-18 + 1, $fz-17, $fz-15);
+        line-height: 1;
+        span{
+          @extend %RubikMedium;
+          @include text-fz($fz-12, $fz-12, $fz-10);
+        }
+      }
+      &__oldprice {
+        @include text-fz($fz-13, $fz-13, $fz-10);
+        text-decoration: line-through;
+        margin-top: 2px;
+        color: $red;
+        line-height: 15px;
+      }
+      &__bascet {
+        @include size(56px);
+        background: $arrowActive;
+        transform: translate(24px, 10px);
+        opacity:0;
+      }
+    }
+    @include hover {
+      @include transition(.3s);
+      box-shadow: 0 60px 100px rgba(71, 0, 95, 0.12);
+      .product__item__info__bascet{
+        opacity: 1;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      @include size(100%, 100px);
+      padding: 15px;
+    }
+    @include media-breakpoint-down(xs) {
+      margin-bottom: 15px;
+      padding: 10px 5px;
+      &__top {
+        @include size(100%, 120px);
+        &__img {
+          max-height: 120px;
+        }
+      }
+    }
+  }
+}

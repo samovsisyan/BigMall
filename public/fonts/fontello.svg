@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2020 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="right-open" unicode="&#xe800;" d="M98 626l226-236q16-16 16-40 0-22-16-38l-226-236q-16-16-40-16t-40 16q-36 36 0 80l186 194-186 196q-36 44 0 80 16 16 41 16t39-16z" horiz-adv-x="340" />
+
+<glyph glyph-name="appstore" unicode="&#xe801;" d="M1 351q-1-18-1-36 0-68 20-144 26-97 83-184 89-136 172-137 30 0 78 21t95 21l4 0q46 0 91-20 47-22 76-22 49 1 91 41t85 104q31 48 65 121-50 19-85 57t-48 85q-10 35-9 70l0 24q4 48 34 92t78 70q-38 48-89 75t-103 27q-48 0-105-21t-86-22q-30 0-90 22t-102 21q-58 0-114-33t-96-93q-37-56-44-139z m415 258q-3 15-3 30 0 65 53 129 27 33 70 56t82 26q2-15 2-30 0-69-50-132-28-36-70-58-41-22-80-21l-4 0z" horiz-adv-x="860" />
+
+<glyph glyph-name="down-open" unicode="&#xe802;" d="M564 422l-234-224q-18-18-40-18t-40 18l-234 224q-16 16-16 41t16 41q38 38 78 0l196-188 196 188q40 38 78 0 16-16 16-41t-16-41z" horiz-adv-x="580" />
+
+<glyph glyph-name="cancel" unicode="&#xe803;" d="M452 194q18-18 18-43t-18-43q-18-16-43-16t-43 16l-132 152-132-152q-18-16-43-16t-43 16q-16 18-16 43t16 43l138 156-138 158q-16 18-16 43t16 43q18 16 43 16t43-16l132-152 132 152q18 16 43 16t43-16q18-18 18-43t-18-43l-138-158z" horiz-adv-x="470" />
+
+<glyph glyph-name="location-outline" unicode="&#xe804;" d="M416 741q-128 0-221-90-91-88-91-216 0-126 91-215l221-219 223 219q90 88 90 215 0 129-90 216-93 90-223 90z m0 104q174 0 295-120t122-290-122-290l-295-290-293 290q-123 120-123 290t123 290 293 120z m0-286q-52 0-91-39t-39-92 39-92q38-37 91-37 55 0 93 37 39 39 39 92t-39 92-93 39z m0 52q75 0 129-53t54-129-54-129-129-54-128 54-54 129 54 129 128 53z" horiz-adv-x="833" />
+
+<glyph glyph-name="left-open" unicode="&#xe807;" d="M242 626q14 16 39 16t41-16q38-36 0-80l-186-196 186-194q38-44 0-80-16-16-40-16t-40 16l-226 236q-16 16-16 38 0 24 16 40 206 214 226 236z" horiz-adv-x="341" />
+</font>
+</defs>
+</svg>

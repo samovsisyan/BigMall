@@ -1,0 +1,194 @@
+@import '../../../public/style/base/mixins';
+
+.footer {
+  padding: 0 70px;
+  &__main {
+    @include border-top-radius(100px);
+    padding: 100px 80px;
+    &__logo {
+      @include size(78px, auto);
+      margin: 3px 0 17px;
+
+    }
+    &__desc {
+      @include text-fz($fz-15, $fz-14, $fz-12);
+      line-height: 24px;
+      margin-bottom: 25px;
+      color: $lightGray
+    }
+    &__title {
+      @include text-fz($fz-17, $fz-15);
+      line-height: 20px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 0 15px;
+    &__main {
+      @include border-top-radius(80px);
+      padding: 50px 90px;
+    }
+  }
+
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+    &__main {
+      @include border-top-radius(30px);
+      padding: 30px 74px;
+      &__logo {
+        width: 55px;
+        margin: 0 0 15px;
+      }
+      &__desc {
+        margin-bottom: 15px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+.social {
+  margin-top: 20px;
+  &__icon {
+    @include size(44px);
+    background: url('../../../public/images/socialIcons/socialIconsSprite.png') no-repeat;
+    background-size: auto 44px;
+    &__vk {
+      background-position: 0 -2px;
+    }
+    &__in {
+      background-position: -58px -2px;
+      margin: 0 18px;
+    }
+    &__fb {
+      background-position: -118px -2px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 15px;
+    &__icon {
+      @include size(35px);
+      background-size: auto 35px;
+      &__vk {
+        background-position: 0 0;
+      }
+      &__in {
+        background-position: -47px 0;
+        margin: 0 10px;
+      }
+      &__fb {
+        background-position: -94px 0;
+      }
+    }
+  }
+}
+
+.copywright {
+  padding: 20px;
+  background: $footerGradient;
+}
+
+//menu items
+.menu {
+  margin-top: 24px;
+  @include dots($baseGreen);
+  &:first-of-type {
+    margin-bottom: 58px;
+  }
+  &__item {
+    margin-top: 24px;
+    &:not(:last-child) {
+      margin-right: 28px;
+    }
+    &__link {
+      @include transition(.3s);
+      color: $lightGray;
+      line-height: 19px;
+      @include hover-focus-active {
+        color: $activeGreen
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    //margin-top: 18px;
+    &__item {
+      //margin-top: 18px;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 15px;
+    &:first-of-type {
+      margin-bottom: 15px;
+    }
+    &__item {
+      margin-right: 15px;
+      margin-top: 15px;
+    }
+  }
+}
+
+.contact {
+  &__tel {
+    @include transition(.3s);
+    @include text-fz($fz-18, $base);
+    @extend %RubikMedium;
+    color: $baseColor;
+    line-height: 21px;
+    margin-bottom: 10px;
+    @include hover-focus-active {
+      color: $baseColor;
+    }
+  }
+  &__back {
+    @extend %RubikMedium;
+    color: $blue;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    line-height: 24px;
+    @include hover-focus-active{
+      color: $blue;
+    }
+  }
+  .footer__main {
+    &__desc {
+      margin-bottom: 42px;
+    }
+    &__title {
+      line-height: 24px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__tel {
+      margin-top: 15px;
+    }
+    &__back {
+      line-height: 1;
+    }
+    &__desc, .footer__main__desc {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.app {
+  margin-top: 20px;
+  &__item {
+    &:first-of-type {
+      margin-right: 16px;
+    }
+    &__link {
+      @include size(54px)
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-top: 10px;
+    &__item {
+      &__link {
+        @include size(35px)
+      }
+    }
+  }
+}

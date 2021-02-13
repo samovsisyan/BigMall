@@ -1,0 +1,54 @@
+@import '../../../public/style/base/mixins';
+
+.bigOrder {
+  &__title {
+    @include text-fz($fz-18, $base, $fz-14);
+    line-height: 18px;
+    margin: 0 0 22px;
+  }
+  @include basicModalProperties;
+
+  &__desc {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    color: $baseColor;
+    margin-bottom: 22px;
+  }
+  &__list {
+    &__title {
+      @include text-fz($fz-15, $fz-14, $fz-12);
+      @extend %RubikMedium;
+      line-height: 22px;
+    }
+    &__desc {
+      @include text-fz($fz-15, $fz-14, $fz-12);
+      color: $gray96;
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.confirmation__check {
+  @include size(20px);
+  @include border-radius(50%);
+  background: $activeGreen;
+  margin-right: 10px;
+  input {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    font-size: 100px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 10;
+    &:checked {
+      ~ .confirmation__check__icon {
+        opacity: 1;
+      }
+    }
+  }
+  &__icon {
+    @include size(inherit);
+    right: 0;
+    opacity: 0;
+  }
+}

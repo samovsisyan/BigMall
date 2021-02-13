@@ -1,0 +1,54 @@
+@import '../../../public/style/base/mixins';
+
+.contact {
+  @include basicModalProperties;
+  :global(.modal-header button.close){
+    top:16px;
+  }
+  &__success{
+    margin-bottom: 22px;
+  }
+  &__desc {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    color: $gray96;
+    &__link {
+      color: $blue;
+      @include text-fz(inherit);
+      text-decoration: underline;
+      @include hover-focus-active {
+        color: $blue;
+      }
+    }
+  }
+  &__title {
+    @include text-fz($fz-20, $fz-18, $base);
+    line-height: 24px;
+    margin: 0 0 30px;
+  }
+}
+
+.contact__check {
+  @include size(20px);
+  @include border-radius(50%);
+  background: $activeGreen;
+  margin-right: 10px;
+  input {
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    font-size: 100px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 10;
+    &:checked {
+      ~ .confirmation__check__icon {
+        opacity: 1;
+      }
+    }
+  }
+  &__icon {
+    @include size(inherit);
+    right: 0;
+    z-index: 10;
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../../public/style/base/mixins';
+
+.customPagination {
+  margin:16px 0 100px;
+  &__more {
+    :global(.page-link) {
+      background: transparent !important;
+      &::after, &::before,span {
+        content:'';
+        @include border-radius(50%);
+        @include size(4px);
+        display: block;
+        background: #E7E9ED;
+        overflow: hidden;
+      }
+      span{
+        margin:0 6px;
+      }
+    }
+  }
+  :global(.page-item) {
+    &:not(:first-of-type) {
+      margin-left: 18px;
+    }
+  }
+  :global(.page-link) {
+    @extend %RubikBold;
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    @include border-radius(50% !important);
+    @include size(38px);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $grayED;
+    border: none;
+    color: $baseColor;
+    @include hover-focus-active {
+      box-shadow: none;
+      background: $activeGreen;
+      color: $white
+    }
+  }
+  :global(.page-item.active .page-link) {
+    background: $activeGreen;
+    color: $white
+  }
+}

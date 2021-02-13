@@ -1,0 +1,29 @@
+@import '../../../public/style/base/mixins';
+
+.shopClose{
+  @include basicModalProperties;
+  &__desc {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    color: $gray96;
+    margin-bottom: 16px;
+  }
+  &__success {
+    max-width: 318px;
+  }
+  &__title {
+    @include text-fz($fz-26, $fz-24, $fz-20);
+    line-height: 30px;
+    margin: 0 0 16px;
+  }
+  :global(.modal-dialog ) {
+    max-width: 570px;
+    @include media-breakpoint-down(sm) {
+      max-width: 350px;
+    }
+    @include media-breakpoint-down(xs) {
+      width: 300px;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+  }
+}

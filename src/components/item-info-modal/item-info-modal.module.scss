@@ -1,0 +1,169 @@
+@import '../../../public/style/base/mixins';
+
+.itemModal {
+  @include basicModalProperties;
+  :global(.modal-dialog) {
+    max-width: 770px;
+    @include media-breakpoint-down(md) {
+      max-width: 600px;
+    }
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  :global(.modal-content) {
+    padding: 26px 26px 0;
+  }
+  :global( .modal-header button.close ) {
+    top: 15px;
+    @include media-breakpoint-down(sm) {
+      right: 15px;
+    }
+  }
+  &__image {
+    height: 275px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    @include text-fz($fz-24, $fz-20, $fz-18);
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+  &__weight {
+    @include text-fz($fz-14, $fz-14, $fz-12);
+    color: $gray9F;
+  }
+  &__price {
+    @extend %RubikMedium;
+    @include text-fz($fz-26, $fz-24, $fz-14);
+    margin-bottom: 7px;
+    line-height: 26px;
+  }
+  &__oldPrice {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    color: $red;
+    text-decoration: line-through;
+  }
+  @include media-breakpoint-down(sm) {
+  }
+}
+
+//save button
+.saveInBascet {
+  @include basicModalProperties;
+  margin: 20px 0 50px;
+  &__success {
+    @include text-fz($base, $fz-14, $fz-12);
+    @include size(270px !important, 62px);
+    max-width: 100%;
+    padding: 10px 21px;
+  }
+  @include media-breakpoint-down(sm){
+    &__success{
+      max-width: 100%;
+      width: 200px !important;
+      margin: 20px auto 0;
+    }
+  }
+}
+
+//check item
+.checkItem {
+  &__item {
+    @include size(calc(100% / 3 - 10.6px), 104px);
+    &__radio {
+      @include size(300%);
+      z-index: 10;
+      opacity: 0;
+      &:checked {
+        ~ .checkItem__item__label {
+          border-color: $activeGreen;
+        }
+      }
+    }
+    &__label {
+      @include text-fz($fz-14, $fz-14, $fz-12);
+      @include border-radius($radius20);
+      padding: 12px 25px;
+      border: 2px solid transparent;
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+    &__item {
+      height: 80px;
+      &__label {
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+.checkItem__item__countContainer{
+  background: linear-gradient(180deg, transparent 0%, $white 66.23%);
+@include addResetItem(56px);
+&__number {
+  @include size(134px,56px);
+  @include border-radius(100px);
+}
+}
+//tab
+.menuTab {
+  &__nav {
+    :global(.nav-item) {
+      &:not(:first-of-type) {
+        margin-left: 46px;
+      }
+    }
+    &__item {
+      @extend %RubikBold;
+      @include text-fz($base, $fz-14, $fz-12);
+      color: $baseColor;
+      margin-bottom: 26px;
+      @include hover-focus-active {
+        color: $activeGreen
+      }
+    }
+    :global(.active) {
+      color: $activeGreen
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__nav {
+      padding: 28px 0 0 !important;
+      width: 100%;
+      :global(.nav-item) {
+        &:not(:first-of-type) {
+          margin-left: 10px;
+        }
+      }
+      &__item {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+//tab list
+.tabList {
+  &__item {
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    line-height: 26px;
+    color: $gray96;
+    padding: 12px 0;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $grayED;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+}

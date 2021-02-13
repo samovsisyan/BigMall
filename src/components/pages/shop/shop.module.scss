@@ -1,0 +1,19 @@
+@import '../../../../public/style/base/mixins';
+
+.shop {
+  @include main-padding;
+  &__infBtn {
+    @include text-fz($fz-14, $fz-14, $fz-12);
+    text-decoration: underline;
+    color: $blue;
+    margin-top: 6px;
+    line-height: 24px;
+    @include hover {
+      color: $blue;
+    }
+  }
+}
+
+.productItems{
+  margin-top: 30px;
+}

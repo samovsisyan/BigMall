@@ -1,0 +1,70 @@
+@import '../../../public/style/base/mixins';
+
+.basketItem {
+  @include border-radius(14px);
+  margin-bottom: 4px;
+  padding: 15.37px 18px 15.37px 15.37px;
+  min-width: max-content;
+  &__img {
+    @include size(63.25px, 55.25px);
+    margin: 0 15.37px 0 0;
+    img {
+      max-width: 63.25px;
+      max-height: 55.25px;
+    }
+  }
+  &__about {
+    width: 190px;
+    &__title {
+      @extend %RubikRegular;
+      @include text-fz($fz-13, $fz-13, $fz-12);
+      line-height: 17px;
+    }
+    &__weight {
+      @include text-fz($fz-12, $fz-12, $fz-12);
+      color: $gray9F
+    }
+  }
+  &__countContainer {
+    margin: 0 26px 0 24px;
+  }
+  @include addResetItem(40px);
+  &__minus, &__number, &__plus {
+    @include text-fz($fz-14, $fz-14, $fz-12);
+  }
+  &__close{
+    line-height: 0;
+    margin-left: 18px;
+  }
+
+  &__price {
+    @extend %RubikMedium;
+  }
+  &__price {
+    @include text-fz($base, $base, $fz-14);
+    line-height: 19px;
+  }
+  @include media-breakpoint-down(xs){
+    padding: 15.37px 10px 15.37px 10px;
+    &__img {
+      @include size(55px);
+      margin: 0 10px 0 0;
+      img {
+        max-width: 55px;
+        max-height: 55px;
+      }
+    }
+    &__about {
+      width: 100px;
+    }
+    &__minus, &__number, &__plus {
+      @include size(30px);
+      svg{
+        width: 8px;
+      }
+    }
+    &__countContainer {
+      margin: 0 10px 0 10px;
+    }
+  }
+}

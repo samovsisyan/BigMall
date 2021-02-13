@@ -1,0 +1,48 @@
+@import "../../../../public/style/base/mixins";
+
+.confirmation {
+  &__ignore,
+  &__success {
+    width: calc((100% / 2) - 9px);
+    @include border-radius(40px);
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    @extend %RubikBold;
+    padding: 12px;
+  }
+  &__ignore {
+    @include button-variant($grayEF, $grayEF, $grayEF, $grayEF, $grayEF, $grayEF);
+    color: $baseColor;
+  }
+  &__success {
+    margin-right: 18px;
+    background: $greenGradient;
+    @include hover-focus-active {
+      background: $greenGradient;
+    }
+  }
+  &__desc {
+    margin: 16px 0 0;
+    color: $gray96;
+  }
+  &__title {
+    @include text-fz($fz-18, $base, $fz-14);
+    @extend %RubikBold;
+    line-height: 24px;
+    margin: 0 0 30px;
+  }
+  :global(.modal-content) {
+    @include modal-arrow;
+    @include border-radius($radius20);
+    border: 0;
+    padding: 40px 26px;
+    @include media-breakpoint-down(xs) {
+      padding: 20px 15px;
+    }
+  }
+  :global(.modal-dialog) {
+    max-width: 370px;
+    position: absolute;
+    left: 64.5%;
+    top: 70px;
+  }
+}

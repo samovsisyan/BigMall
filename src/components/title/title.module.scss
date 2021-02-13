@@ -1,0 +1,6 @@
+@import '../../../public/style/base/mixins';
+
+.title {
+  @include text-fz($fz-32,$fz-30,$fz-26);
+  @extend %RubikBold;
+}

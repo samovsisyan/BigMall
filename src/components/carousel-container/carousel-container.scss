@@ -1,0 +1,73 @@
+@import '../../../public/style/base/mixins';
+
+.carousel-control-prev, .carousel-control-next {
+  @include size(60px);
+  @include border-radius(50%);
+  @include transition(.3s);
+  top: 50%;
+  transform: translateY(calc(-50% - 30px));
+  background: $white;
+  box-shadow: 0 40px 60px $arrowShadow;
+  opacity: 1;
+  &.carousel-control-prev {
+    left: -150px;
+  }
+  &.carousel-control-next {
+    right: -150px;
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    @include size(auto);
+    &::before {
+      @include font-size($base);
+      font-family: 'fontello';
+      color: $baseColor;
+    }
+  }
+  .carousel-control-prev-icon {
+    background-image: none;
+    &::before {
+      content: '\e807'
+    }
+  }
+  .carousel-control-next-icon {
+    background-image: none;
+    &::before {
+      content: '\e800'
+    }
+  }
+  @include hover {
+    background: $arrowActive;
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      &::before {
+        color: $white
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    @include size(50px);
+    &.carousel-control-prev {
+      left: -120px;
+    }
+    &.carousel-control-next {
+      right: -120px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &.carousel-control-prev {
+      left: -90px;
+    }
+    &.carousel-control-next {
+      right: -90px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &.carousel-control-prev {
+      left: -60px;
+    }
+    &.carousel-control-next {
+      right: -60px;
+    }
+  }
+}

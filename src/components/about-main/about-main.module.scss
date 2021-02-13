@@ -1,0 +1,40 @@
+@import '../../../public/style/base/_mixins';
+
+.aboutMain {
+  @include size(calc(100% - 300px), auto);
+  margin-top: 46px;
+  color: $gray96;
+  &__title {
+    @include text-fz($base, $base, $fz-14);
+    margin: 30px 0 14px;
+  }
+  &__tel {
+    @extend %RubikMedium;
+    @include text-fz($fz-18, $fz-18, $base);
+    color: $baseColor;
+    @include hover-focus-active {
+      color: $baseColor;
+    }
+  }
+  &__link {
+    color: $blue;
+    @include hover-focus-active {
+      color: $blue;
+    }
+  }
+  &__item {
+    margin-bottom: 14px;
+  }
+  @include media-breakpoint-down(xs) {
+    @include size(100%, auto);
+  }
+  @include media-breakpoint-down(xs) {
+    margin-top: 0
+  }
+}
+
+.map {
+  @include size(670px, 470px);
+  max-width: 100%;
+  margin-bottom: 80px;
+}

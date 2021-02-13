@@ -1,0 +1,126 @@
+@import '../../../public/style/base/mixins';
+
+.basket {
+  &__header {
+    padding: 25px 26px 21px;
+    &__title {
+      @include text-fz($fz-30, $fz-24, $fz-18);
+      @extend %RubikBold;
+      line-height: 22px;
+    }
+    &__delete {
+      @extend %RubikMedium;
+      @include text-fz($fz-15, $fz-12);
+      background: $grayEF url(../../../public/images/icons/delete.svg) no-repeat 26px 17.5px;
+      background-size: 12px auto;
+      padding: 12px 26px 12px 48px;
+    }
+  }
+  &__title {
+    @include text-fz($fz-20, $fz-18, $base);
+    line-height: 32px;
+    margin-bottom: 14px;
+  }
+  &__body, &__title {
+    padding: 0 26px 0;
+  }
+  &__footer {
+    padding: 18px 26px;
+    &__position {
+      @include text-fz($fz-15, $fz-14, $fz-12);
+      line-height: 18px;
+      &__shipping {
+        margin: 8px auto 15px;
+        &__item {
+          @extend %RubikMedium;
+          @include text-fz($fz-18, $base, $fz-14);
+          margin-left: 4px;
+        }
+      }
+    }
+    &.active {
+      background: $white;
+      .basket__success {
+        justify-content: space-between;
+      }
+    }
+  }
+  &__success {
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    @include border-radius(70px);
+    @extend %RubikBold;
+    padding: 12px 32px 12px 36px;
+    line-height: 30px;
+    background: $greenGradient;
+    margin-bottom: 21px;
+    justify-content: center;
+    &__price {
+      @include text-fz($fz-18, $fz-17, $fz-15);
+      line-height: 21px;
+    }
+    &:disabled {
+      opacity: 1;
+      color: $textTransparent
+    }
+    @include hover-focus-active {
+      background: $greenGradient;
+    }
+  }
+
+  :global(.modal-dialog) {
+    @include size(540px, 940px);
+    min-width: 540px;
+    max-height: 90vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      @include size(450px, 940px);
+      min-width: 450px;
+    }
+    @include media-breakpoint-down(xs) {
+      @include size(100%, 100vh);
+      min-width: 100%;
+      max-height: 100vh;
+    }
+  }
+  :global(.modal-content) {
+    @include border-radius(0);
+    @include size(inherit);
+    max-height: inherit;
+    background: $baseBg;
+    border: 0;
+    padding: 0;
+    @include media-breakpoint-down(xs) {
+      width: 100%;
+    }
+
+  }
+  :global(.modal-header button.close) {
+    right: auto;
+    left: -62px;
+    top: 32px;
+    @include media-breakpoint-down(xs) {
+      position: static;
+      margin-right: 10px;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 20px 15px;
+    &__header, &__body {
+      padding: 15px 10px 15px;
+      &__delete {
+        background-position: 26px 12px;
+        margin-left: auto;
+      }
+    }
+    &__title {
+      padding: 0 10px;
+      margin-bottom: 0;
+    }
+    &__footer {
+      padding: 18px 15px;
+    }
+  }
+}

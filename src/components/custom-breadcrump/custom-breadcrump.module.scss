@@ -1,0 +1,31 @@
+@import '../../../public/style/base/mixins';
+
+.customBreadcrump {
+  :global(.breadcrumb) {
+    background: transparent;
+    padding: 35px 0;
+    margin: 0;
+  }
+  :global(.breadcrumb-item) {
+    display: flex;
+    align-items: center;
+    + .breadcrumb-item {
+      padding-right: 14px;
+    }
+    &:not(:first-of-type) {
+      &::before {
+        @include size(13px, 6px);
+        content: '';
+        background: url(../../../public/images/icons/VectorRightArrow.png) no-repeat;
+        background-size: cover;
+        margin-right: 14px;
+
+      }
+    }
+    a, span {
+      @include text-fz($fz-14, $fz-14, $fz-12);
+      text-decoration: none;
+      color: rgba(34, 44, 84, 0.3);
+    }
+  }
+}

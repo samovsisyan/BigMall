@@ -1,0 +1,34 @@
+@import '../../../public/style/base/mixins';
+
+.confirmCode {
+  @include basicModalProperties;
+  &__description {
+    margin-top: 4px;
+  }
+  &__success {
+    margin-bottom: 22px;
+  }
+  &__btn, &__description {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+  }
+  &__btn {
+    @extend %RubikRegular;
+    color: $gray96;
+    line-height: 22px;
+    &:first-of-type {
+      margin-bottom: 10px;
+    }
+    @include hover-focus-active {
+      color: $gray96;
+    }
+  }
+  &__tel {
+    @extend %RubikBold;
+    @include text-fz($base, $base, $fz-14);
+    line-height: 24px;
+    margin: 0 0 16px;
+  }
+  :global(.modal-header button.close) {
+    top: 16px;
+  }
+}

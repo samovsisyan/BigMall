@@ -1,0 +1,37 @@
+@import '../../../public/style/base/_mixins';
+
+.asideMenu {
+  @include border-radius($radius20);
+  padding-bottom: 22px;
+  margin-bottom: 30px;
+  &__title {
+    @include text-fz($fz-18, $base, $fz-14);
+    @extend %RubikBold;
+    border-bottom: 1px solid $grayED;
+    padding: 26px 22px 22px;
+  }
+  &__item {
+    @include transition(.3s);
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    margin-top: 22px;
+    padding: 0 22px;
+    color: $baseColor;
+    @include hover {
+      @extend %RubikMedium;
+      color: $activeGreen;
+      background: transparent;
+    }
+  }
+  :global(.active) {
+    @extend %RubikMedium;
+    color: $activeGreen;
+    background: transparent;
+    margin-top: 22px !important;
+    &::after {
+      font-family: 'fontello';
+      content: '\e800';
+      position: absolute;
+      right: 26.5px;
+    }
+  }
+}

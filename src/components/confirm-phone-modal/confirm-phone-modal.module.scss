@@ -1,0 +1,47 @@
+@import '../../../public/style/base/mixins';
+
+.confirmPhone {
+  @include basicModalProperties;
+  :global(.react-tel-input){
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    @include border-radius(12px);
+    background: $baseBg;
+    border:1px solid $grayE8;
+    margin: 0 0 16px;
+  }
+  :global(.react-tel-input .form-control){
+    height: 54px;
+  }
+  :global(.react-tel-input .flag-dropdown){
+    background: transparent !important;
+    border:none;
+  }
+
+  &__desc {
+    @include text-fz($fz-15, $fz-15, $fz-12);
+    color: $gray96;
+    margin-top: 16px;
+    &__link {
+      color: $blue;
+      @include text-fz(inherit);
+      margin-left: 5px;
+      text-decoration: underline;
+      @include hover-focus-active {
+        color: $blue;
+      }
+    }
+  }
+  &__title {
+    @include text-fz($fz-20, $fz-18, $base);
+    line-height: 24px;
+    margin: 0 0 30px;
+  }
+  :global(.modal-header button.close) {
+    top: 16px;
+  }
+  @include media-breakpoint-down(sm){
+    :global(.react-tel-input .form-control){
+      height: 40px;
+    }
+  }
+}

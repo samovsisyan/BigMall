@@ -1,0 +1,38 @@
+@import "../../../../public/style/base/mixins";
+
+.countries {
+  &__title {
+    @include text-fz($fz-18, $base, $fz-14);
+    @extend %RubikBold;
+    line-height: 24px;
+    margin: 0 0 14px;
+  }
+  &__item {
+    @include text-fz($fz-15, $fz-14, $fz-12);
+    color: $baseColor;
+    &:not(:last-of-type) {
+      margin-bottom: 12px;
+    }
+    &.active {
+      color: $activeGreen;
+    }
+    @include hover-focus-active {
+      color: $activeGreen;
+    }
+  }
+  :global(.modal-content) {
+    @include border-radius($radius20);
+    @include modal-arrow;
+    border: 0;
+    padding: 30px;
+    @include media-breakpoint-down(xs) {
+      padding: 20px 15px;
+    }
+  }
+  :global(.modal-dialog) {
+    max-width: 240px;
+    position: absolute;
+    left: 69%;
+    top: 70px;
+  }
+}

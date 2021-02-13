@@ -1,0 +1,40 @@
+@import '../../../../public/style/base/mixins';
+
+.item {
+  @include size(100%, 128px);
+  @include border-radius($radius20);
+  @include transition(.3s);
+  margin-bottom: 30px;
+  padding: 18px;
+  background: $baseBg;
+  &__top {
+    max-width: 128px;
+    max-height: 90px;
+    &__img {
+      object-fit: contain;
+    }
+  }
+  &__text {
+    @include text-fz($fz-14, $fz-12);
+    color: $gray96;
+    margin-top: 5px;
+  }
+  @include hover{
+    background: $white;
+    box-shadow:  $mainMenuShadow;
+  }
+  @include media-breakpoint-down(md) {
+    @include size(100%, 100px);
+    padding: 15px;
+    &__top {
+      max-width: 100px;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 15px;
+    padding: 10px 5px;
+    &__top {
+      max-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@import '../../../public/style/base/mixins';
+
+.apps {
+  &__container {
+    @include main-padding
+  }
+  background: url(../../../public/images/homePage/greenBg.png) no-repeat center;
+  background-size: 100% 100%;
+  padding: 68px 192px 68px  192px ;
+  margin: 184px auto 60px;
+  &__iphone {
+    @include size(auto, 390px);
+    top: -80px;
+    right: 710px;
+    transform: translateX(50%);
+  }
+  &__info {
+    width: 388px;
+    margin-left: 80px;
+    &__title {
+      @extend %RubikBold;
+      @include text-fz($fz-26, $fz-20, $fz-18);
+      line-height: 24px;
+    }
+    &__desc {
+      @include text-fz($fz-18, $base, $fz-14);
+      line-height: 24px;
+      margin: 8px 0 31px;
+    }
+    &__btn {
+      &__item {
+        @include size(178px, auto);
+        &:first-of-type {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 68px 40px 68px 40px;
+    &__iphone {
+      height: 363px;
+      right: 570px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    margin: 80px auto 60px;
+    padding: 20px;
+    &__iphone {
+      height: 363px;
+    }
+    &__info {
+      width: 100%;
+      &__desc {
+        margin: 8px 0 15px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    margin: 40px auto 30px;
+    padding: 15px;
+    &__info {
+      &__btn__item {
+        width: calc(100% / 2 - 8px);
+      }
+    }
+  }
+}

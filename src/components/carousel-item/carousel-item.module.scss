@@ -1,0 +1,35 @@
+@import '../../../public/style/base/mixins';
+
+.item {
+  @include size(100%, 155px);
+  @include border-radius($radius20);
+  margin-bottom: 30px;
+  padding: 20px;
+  background: $white;
+  &__top {
+    max-width: 155px;
+    max-height: 90px;
+    &__img {
+      object-fit: contain;
+    }
+  }
+  &__text {
+    @include text-fz($fz-15, $fz-12);
+    color: $gray96;
+    margin-top: 12px;
+  }
+  @include media-breakpoint-down(md) {
+    @include size(100%, 100px);
+    padding: 15px;
+    &__top {
+      max-width: 100px;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 15px;
+    padding: 10px 5px;
+    &__top {
+      max-width: 100px;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../public/style/base/mixins';
+
+.mainMenu {
+  right: 0;
+  left:0;
+  :global(
+.modal-content
+) {
+    @include modal-arrow;
+    &::before{
+      transform: rotate(-45deg);
+      left: -13px;
+      right: auto;
+      margin: 0 auto;
+      z-index: -1;
+      top: 100px;
+    }
+    @include border-radius($radius20);
+    border: 0;
+    padding: 45px 26px 50px;
+    @include media-breakpoint-down(xs) {
+      padding: 20px 15px;
+    }
+    @include media-breakpoint-down(md){}
+    @include media-breakpoint-down(sm){}
+  }
+  :global(.modal-dialog ) {
+    min-width: calc(100% - 270px);
+    position: absolute;
+    right: 0;
+  }
+  :global(.modal-header button.close ){
+    right: 35px;
+    margin-top: -10px;
+    background: $baseBg;
+    z-index: 100;
+  }
+}

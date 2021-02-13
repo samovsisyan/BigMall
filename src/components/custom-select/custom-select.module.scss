@@ -1,0 +1,57 @@
+@import '../../../public/style/base/mixins';
+
+.value {
+  @include size(auto, 46px);
+  @include text-fz($fz-14, $fz-14, $fz-12);
+  line-height: 30px;
+  &__reset {
+    margin-left: 10px;
+  }
+  &:not(:last-of-type) {
+    margin-right: 30px;
+  }
+  @include media-breakpoint-down(xs) {
+    @include size(calc(100% / 2 - 22.5px), 46px);
+    margin-top: 20px;
+    &:nth-child(1n + 2) {
+      margin-right: 30px;
+    }
+    &:nth-child(2n + 2) {
+      margin-right: 0;
+    }
+  }
+}
+
+.selectContainer {
+  @include size(calc(100% / 4 - 22.5px), 46px);
+  &:not(:last-of-type) {
+    margin-right: 30px;
+  }
+  :global(.custom-select ) {
+    &__control {
+      @include border-radius(10px);
+      height: 46px;
+      border: none;
+      box-shadow: none;
+    }
+    &__option {
+      @extend %RubikMedium;
+      @include text-fz($fz-14, $fz-14, $fz-12);
+      padding: 0;
+      margin-top: 14px;
+    }
+    &__menu {
+      margin-top: 20px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    @include size(calc(100% / 2 - 22.5px), 46px);
+    margin-top: 20px;
+    &:nth-child(1n + 2) {
+      margin-right: 30px;
+    }
+    &:nth-child(2n + 2) {
+      margin-right: 0;
+    }
+  }
+}

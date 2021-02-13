@@ -1,0 +1,11 @@
+@import '../../../../public/style/base/_mixins';
+
+.checkoutOrder {
+  @include main-padding;
+  margin-bottom: 100px;
+  &__title {
+    @extend %RubikBold;
+    @include text-fz($fz-32, $fz-32, $fz-18);
+    margin: 46px 0 30px;
+  }
+}

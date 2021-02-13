@@ -1,0 +1,27 @@
+@import '../../../../public/style/base/mixins';
+
+.menuTab {
+  &__nav {
+    &__item {
+      @extend %RubikRegular;
+      @include text-fz($fz-15, $fz-15, $fz-12);
+      color: $gray96;
+      margin: 0 18px 30px;
+      @include hover-focus-active {
+        color: $activeGreen
+      }
+    }
+    :global(.active) {
+      color: $activeGreen
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__nav {
+      padding:28px 15px 0 !important;
+      width: 100%;
+      &__item {
+        margin-right: 20px;
+      }
+    }
+  }
+}

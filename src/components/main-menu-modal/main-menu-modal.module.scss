@@ -1,0 +1,26 @@
+@import '../../../public/style/base/mixins';
+
+.mainMenu {
+  left: 0;
+  right: 0;
+  :global(
+.modal-content
+) {
+    @include modal-arrow;
+    @include border-radius($radius20);
+    border: 0;
+    padding: 40px 85px 40px 58px;
+    @include media-breakpoint-down(xs) {
+      padding: 20px 15px;
+    }
+    @include media-breakpoint-down(md){}
+    @include media-breakpoint-down(sm){}
+  }
+  :global(.modal-dialog ) {
+    max-width: 100%;
+  }
+  :global(.modal-header button.close ){
+    right: 30px;
+    background: $baseBg;
+  }
+}

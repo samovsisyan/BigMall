@@ -1,0 +1,126 @@
+@import '../../../public/style/base/mixins';
+
+.menu {
+  @include main-padding;
+  background: $baseBg;
+  z-index: 1000;
+  top: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &__logo {
+    @include size(120px, auto);
+    margin-right: 30px;
+    margin-top: 8px;
+  }
+  &__item {
+    @extend %RubikMedium;
+    color: $baseColor;
+    margin-right: 20px;
+    @include hover-focus-active {
+      color: $baseColor;
+    }
+    &.tel {
+      @include text-fz($fz-18, $base, $fz-14);
+      color: $baseColor !important;
+    }
+    &.city {
+      text-decoration: underline;
+      max-width: 125px;
+    }
+    &__text {
+      font-weight: inherit;
+      margin-left: 10px;
+    }
+    &.address {
+      color: $lighterGray;
+      span {
+        color: inherit;
+        @extend %RubikRegular;
+      }
+      img {
+        margin-top: -4px;
+      }
+    }
+    &.basket {
+      @include size(60px);
+      margin-right: 0;
+      background: $grayEF;
+      @include hover-focus-active {
+        background-color: $grayEF !important;
+      }
+    }
+    &__badge {
+      @include font-size($fz-12);
+      @extend %RubikBold;
+      background: $red;
+      min-width: 25px;
+      min-height: 25px;
+      padding: 2px;
+      left: -8px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    :global(.collapse) {
+      background: $baseBg;
+      width: 100%;
+      left: 0;
+    }
+    &__item {
+      margin-bottom: 15px;
+      &.basket {
+        @include size(50px);
+        margin-bottom: 0;
+      }
+      &__badge {
+        @include font-size($fz-10);
+        min-width: 20px;
+        min-height: 20px;
+      }
+    }
+    :global(.navbar-toggler-icon) {
+      background-image: url(../../../public/images/icons/menu.png);
+      border: none;
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .menu {
+      &__logo {
+        width: auto;
+        height: 50px;
+        margin-right: 15px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .menu {
+      &__logo {
+        width: 60px;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .menu {
+      &__logo {
+        width: 50px;
+      }
+      &__item {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.language {
+  @extend %RubikBold;
+  @include text-fz($fz-18, $base, $fz-14);
+  right: 45px;
+  @include media-breakpoint-down(xs) {
+    position: fixed !important;
+    top: 32px;
+  }
+}
